@@ -57,26 +57,77 @@ header{
     box-shadow: inset 0px 0px 4px 2px rgba(255,255,255,0.5);
 }
 
+.section-dica{
+    width: calc(100% - 75px);
+    background: #fff3cd;
+    float: left;
+    margin: 10px;
+    margin-bottom: 0px;
+    border-radius: 10px;
+}
+
 .section-dados{
     margin: 10px;
     padding: 10px;
     width: calc(100% - 95px);
-    height: calc(100% - 110px);
+    height: calc(100% - 170px);
     background: rgba(120,120,120,0.2);
+    overflow-x: hidden;
+    overflow-y: auto;
     float: left;
     border-radius: 10px;
 }
 
 .container-dados{
+    position: relative;
     padding: 10px;
-    width: calc(25% - 25px);
-    height: calc(150px - 20px);
+    width: 280px;
+    height: 140px;
     background: var(--bg-container-dados);
     color: var(--cor-container-dados);
-    border-radius: 10px;
-    margin-left: 5px;
-    margin-top: 5px;
+    border-radius: 0px;
+    margin-right: 10px;
+    margin-bottom: 10px;
     float: left;
+
+    -webkit-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    -moz-box-shadow: 1px 1px 5px 1px rgba(0,0,0,0.75);
+    box-shadow: 3px 2px 1px 1px rgba(0,0,0,0.5);
+}
+
+.container-dados:hover{
+}
+
+.container-dados > ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container-dados > ul > li{
+    width: 100%;
+    float: left;
+    color: rgba(255,255,255,0.9) !important;
+    padding-bottom: 5px;
+}
+
+.container-dados > ul > li > label{
+    padding-left: 5px;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 13px;
+    letter-spacing: 0.5px;
+}
+
+.container-dados > ul > li > label > span{
+    font-size: 12px;
+}
+
+.icon-caminhao{
+    font-size: 17px;
+    left: 10px;
+    top: 10px;
 }
 
 .cobre-tudo{
@@ -99,3 +150,69 @@ header{
     border-radius: 10px;
     display: none;
 }
+
+.container-dica{
+    float: left;
+    margin-left: 15px;
+    padding: 10px;
+    color: #856404;
+    font-family: sans-serif;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.container-dica > label{
+    margin-left: 5px;
+}
+
+.details{
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: rgba(255,255,255,0.9);
+}
+
+.move{
+    position: absolute;
+    right: 40px;
+    top: 10px;
+    font-size: 20px;
+    cursor: move;
+    color: rgba(255,255,255,0.9);
+}
+
+/*
+    CSS TABLE DADOS
+*/
+.table-dados{
+    width: 100%;
+    font-family: sans-serif;
+    font-size: 13px;
+}
+
+
+
+.table-dados > thead > tr > th{
+    background: var(--bg-container-dados);
+    color: var(--cor-container-dados);
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.table-dados > thead > tr > th:first-child{
+    border-radius: 5px 0 0 0;
+}
+
+.table-dados > thead > tr > th:last-child{
+    border-radius: 0 5px 0 0;
+}
+
+.table-dados > tbody{
+    background: #FFF;
+}
+
+/*
+    FIM CSS TABLE DADOS
+*/

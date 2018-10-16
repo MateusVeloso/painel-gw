@@ -6,7 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="author" content="Mateus Veloso">
 
-        <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+        <!--<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>-->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css" crossorigin="anonymous">
         <link href="css/painel.css" rel="stylesheet" type="text/css"/>
     </head>
     <body>
@@ -18,49 +19,85 @@
                 <li class="li-nav-menu-lateral">
                     <i class="fa fa-search"></i>
                 </li>
-                <li class="li-nav-menu-lateral">
-                    <i class="fa fa-bar-chart"></i>
-                </li>
                 <li class="li-nav-menu-lateral" onclick="jQuery('.cobre-tudo').show(); jQuery('.container-ajuste-tema').show()">
-                    <i class="fa fa-gear"></i>
+                    <i class="fa fa-cogs"></i>
                 </li>
             </ul>
         </nav>
-        <section class="section-dados">
-            <div class="container-dados">
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
+        <section class="section-dica">
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-truck"></i><label>Veiculo</label>
             </div>
-            <div class="container-dados">
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-city"></i><label>Cidade</label>
             </div>
-            <div class="container-dados">
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-address-card"></i><label>Motorista</label>
             </div>
-            <div class="container-dados">
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-file-alt"></i><label>Conhecimentos</label>
             </div>
-            <div class="container-dados">
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
-                <p>Teste : Teste : Teste</p>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-weight-hanging"></i><label>Cap.do Veiculo(Kg) / Peso Total(Kg)</label>
             </div>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-percent"></i><label>Porcentagem de ocupação</label>
+            </div>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-info-circle"></i><label>Mais informação</label>
+            </div>
+            <div class="container-dica">
+                <i class="icon-caminhao fa fa-arrows-alt"></i><label>Mudar posição</label>
+            </div>
+        </section>
+        <section class="section-dados sortable">
+<!--            <div class="container-dados ui-state-default">
+                <i class="details fa fa-info-circle"></i>
+                <i class="move fa fa-arrows-alt"></i>
+                <ul class="">
+                    <li class="">
+                        <i class="icon-caminhao fa fa-truck"></i>
+                        <label>OYQ-9171</label>
+                    </li>
+                    <li>
+                        <i class="icon-caminhao fa fa-city"></i>
+                        <label>Recife-PE</label>
+                    </li>
+                    <li>
+                        <i class="icon-caminhao fa fa-address-card"></i>
+                        <label>Mateus de Paula Veloso - <span>10212984411</span></label>
+                    </li>
+                    <li>
+                        <i class="icon-caminhao fa fa-file-alt"></i>
+                        <label>4</label>
+                    </li>
+                    <li>
+                        <i class="icon-caminhao fa fa-weight-hanging"></i>
+                        <label>0,00 / 15.974,22</label>
+                    </li>
+                    <li>
+                        <i class="icon-caminhao fa fa-percent"></i>
+                        <label>0,00</label>
+                    </li>
+                </ul>
+            </div>-->
         </section>
         <div class="cobre-tudo" onclick="jQuery('.cobre-tudo').hide(); jQuery('.container-ajuste-tema').hide()"></div>
         <div class="container-ajuste-tema">
-            <p>Cor do menu lateral</p>
+            <p>Estilo do Layout</p>
+            <p>
+                <select id="estilo-layout">
+                    <option value="table">Tabela</option>
+                    <option value="card">Card</option>
+                </select>
+            </p>
+<!--            <p>Cor do menu lateral</p>
             <p><input type="color" id="input-cor-menu" name="color" value="#e66465" onchange="document.documentElement.style.setProperty('--bg-nav', this.value);$('#input-cor-menu').val($('.nav-menu-lateral').css('background'));"/></p>
             <p>Cor dos quadrados</p>
-            <p><input type="color" id="input-cor-caixas" name="color" value="#e66465" onchange="document.documentElement.style.setProperty('--bg-container-dados', this.value);$('#input-cor-caixas').val($('.container-dados').css('background'));"/></p>
+            <p><input type="color" id="input-cor-caixas" name="color" value="#e66465" onchange="document.documentElement.style.setProperty('--bg-container-dados', this.value);$('#input-cor-caixas').val($('.container-dados').css('background'));"/></p>-->
         </div>
         <script src="https://code.jquery.com/jquery-3.3.1.min.js" crossorigin="anonymous"></script>
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
         <script src="js/painel.js" type="text/javascript"></script>
     </body>
 </html>
