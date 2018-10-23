@@ -10,17 +10,24 @@ $(function () {
         alert('Em desenvolvimento!');
     });
 
-    $('#estilo-layout').change(() => {
-        var v = $("#estilo-layout option:selected").val();
-        if (v === 'table') {
+    $('#select-atualizar-resultados').change(() => {
+        if (document.getElementById('select-atualizar-resultados').value !== 0) {
+            setTimeout(function () {
+                window.location.reload();
+            }, document.getElementById('select-atualizar-resultados').value * 1000);
+        }
+    });
+
+    $('input[type=radio][name=estilo-layout]').change(function () {
+        if (this.value == 'table') {
             $('.section-dados').show();
             $('.section-grafico').hide();
             criarPopularTable();
-        } else if (v === 'card') {
+        } else if (this.value == 'card') {
             $('.section-dados').show();
             $('.section-grafico').hide();
             criarPupularCard();
-        } else if (v === 'grafico') {
+        } else if (this.value == 'grafico') {
             $('.section-dados').hide();
             $('.section-grafico').show();
         }
@@ -29,11 +36,11 @@ $(function () {
     $('.li-nav-menu-lateral').click((e) => {
         var container = null;
         if (e.target.id === 'filtros') {
-            $('.title-filtros').text('Filtros');
+            $('.title-filtros').html('<i class="fa fa-search" style="margin-right:8px;"></i><label class="margin-left:10px;">Filtros</label>');
             container = $('.container-filtros-filtros');
         } else {
             container = $('.container-filtros-ajustes');
-            $('.title-filtros').text('Ajustes');
+            $('.title-filtros').html('<i class="fa fa-cogs" style="margin-right:8px;"></i><label class="margin-left:10px;">Ajustes</label>');
         }
 
         $('.section-dados').css('width', 'calc(75% - 40px)');
@@ -47,11 +54,10 @@ $(function () {
             container.show();
             $('.title-filtros').show();
         });
-
     });
 
     $('.fechar-menu-lateral').click(() => {
-        $('.section-dica').css('width', 'calc(100% - 40px)');
+        $('.section-dica').css('width', 'calc(100% - 100px)');
         $('.section-dados').css('width', 'calc(100% - 95px)');
         $('.nav-menu-lateral').animate({
             'width': '55px'
@@ -64,9 +70,14 @@ $(function () {
         $('.title-filtros').hide();
     });
 
-//    criarPopularTable();
     criarPupularCard()();
-//    jQuery('.cobre-tudo').show(); jQuery('.container-ajuste-tema').show()
+
+    if (document.getElementById('select-atualizar-resultados').value !== 0) {
+        setTimeout(function () {
+            window.location.reload();
+        }, document.getElementById('select-atualizar-resultados').value * 1000);
+    }
+
 });
 
 const json = {
@@ -106,6 +117,33 @@ const json = {
             'capacidade': '210,00',
             'total': '974,00',
             'ocupacao': '140,00'
+        },
+        {
+            'veiculo': 'VVV-1411',
+            'cidade': 'Recife-PE',
+            'motorista': 'Paulo de Paula Veloso - 10212984411',
+            'conhecimento': '580',
+            'capacidade': '140,00',
+            'total': '974,00',
+            'ocupacao': '660,00'
+        },
+        {
+            'veiculo': 'VVV-1411',
+            'cidade': 'Recife-PE',
+            'motorista': 'Paulo de Paula Veloso - 10212984411',
+            'conhecimento': '580',
+            'capacidade': '140,00',
+            'total': '974,00',
+            'ocupacao': '660,00'
+        },
+        {
+            'veiculo': 'VVV-1411',
+            'cidade': 'Recife-PE',
+            'motorista': 'Paulo de Paula Veloso - 10212984411',
+            'conhecimento': '580',
+            'capacidade': '140,00',
+            'total': '974,00',
+            'ocupacao': '660,00'
         },
         {
             'veiculo': 'VVV-1411',
@@ -155,7 +193,8 @@ function criarPupularCard() {
     $.each(json.item, (index, obj) => {
         container = $('<div>').addClass('container-dados ui-state-default');
         i = $('<i>').addClass('details fa fa-info-circle').click(function () {
-            alert('Não existe informações adicionais')
+            $('.container-mais-informacao').show();
+            $('.cobre-tudo').show();
         });
         container.append(i);
         i = $('<i>').addClass('move fa fa-arrows-alt');
